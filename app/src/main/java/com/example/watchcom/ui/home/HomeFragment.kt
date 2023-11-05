@@ -8,9 +8,7 @@ import com.example.watchcom.databinding.FragmentHomeBinding
 import com.example.watchcom.ui.base.BaseFragment
 
 class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
-    override val layOutId: Int
-        get() = R.layout.fragment_home
-
+    override val layOutId = R.layout.fragment_home
     override val viewModel: HomeViewModel by viewModels()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

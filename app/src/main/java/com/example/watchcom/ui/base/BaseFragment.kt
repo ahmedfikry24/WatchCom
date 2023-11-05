@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
+import com.example.watchcom.BR
 
 abstract class BaseFragment<DB : ViewDataBinding, V : BaseViewModel> : Fragment() {
 
@@ -24,6 +25,7 @@ abstract class BaseFragment<DB : ViewDataBinding, V : BaseViewModel> : Fragment(
     ): View? {
         _binding = DataBindingUtil.inflate<DB>(inflater, layOutId, container, false).apply {
             lifecycleOwner = viewLifecycleOwner
+            setVariable(BR.viewModel,viewModel)
         }
         return _binding!!.root
     }
