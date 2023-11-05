@@ -23,5 +23,5 @@ object ApiManager {
         client(okhttpClient)
     }.build()
 
-    fun callManager() = retrofit.create(ApiService::class.java)
+    fun callManager(): ApiService = retrofit.create(ApiService::class.java)
 }
