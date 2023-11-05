@@ -1,6 +1,6 @@
 package com.example.watchcom.data
 
-import com.example.watchcom.data.authentication.TokenInterceptor
+import com.example.watchcom.data.authentication.AuthInterceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -11,10 +11,10 @@ object ApiManager {
     private val loggingInterceptor = HttpLoggingInterceptor().apply {
         level = HttpLoggingInterceptor.Level.BODY
     }
-    private val tokenInterceptor = TokenInterceptor()
+    private val authInterceptor = AuthInterceptor()
     private val okhttpClient = OkHttpClient.Builder().apply {
         addInterceptor(loggingInterceptor)
-        addInterceptor(tokenInterceptor)
+        addInterceptor(authInterceptor)
     }.build()
 
     private val retrofit = Retrofit.Builder().apply {

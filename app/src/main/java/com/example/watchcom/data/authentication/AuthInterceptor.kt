@@ -3,7 +3,7 @@ package com.example.watchcom.data.authentication
 import okhttp3.Interceptor
 import okhttp3.Response
 
-class TokenInterceptor : Interceptor {
+class AuthInterceptor : Interceptor {
     override fun intercept(chain: Interceptor.Chain): Response {
         val builder = chain.request().newBuilder()
         builder.addHeader("Authorization", "Bearer $TOKEN")
